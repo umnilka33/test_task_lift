@@ -15,6 +15,7 @@
 
 <script>
 import { mapActions } from 'vuex';
+let leavingFloor = false;
     export default {
         name: "l-floor",
         components: {},
@@ -40,15 +41,52 @@ import { mapActions } from 'vuex';
                 }
                 console.log('ochered', this.$store.state.floor_queue, this.$store.state.floor_queue != {})
 
-               /* if(floorQueue.length != 0){
+                leavingFloor = true;
+/*
+               if(floorQueue.length != 0){
                     let temp_lift = { current_floor: floorQueue[0], direction: 'up'};
                     this.SET_LIFT_DATA_CHANGES(temp_lift);
                     setTimeout(() => {
                         floorQueue.shift();
                     this.SET_FLOOR_IN_QUEUE(floorQueue);
                     console.log('прошло 3 секунды')}, 3000);
-                }*/
-                //while(floorQueue.length != 0){
+                }
+*/
+/*function test(floorQueue, this_){
+                    console.log('прошло 3 секунды');
+                    if(floorQueue.length != 0){
+                        setTimeout(() => {test(floorQueue, this_)}, 3000);
+                    }
+                    else {
+                        return;
+                    }
+                }
+//где то flag изначально false
+               /* if(flag == false){
+                    while(floorQueue.length != 0){
+                        flag = true;
+                        //await test(floorQueue, this);
+
+
+
+
+                        /*console.log('make FLAG true',floorQueue)
+                        setTimeout(() => {
+                        floorQueue.shift();
+                        this.SET_FLOOR_IN_QUEUE(floorQueue);
+                        console.log('прошло 3 секунды')}, 3000);*/
+
+
+
+
+                        /*setTimeout(() => {
+                            floorQueue.shift();
+                            this.SET_FLOOR_IN_QUEUE(floorQueue);
+                            console.log('прошло 3 секунды')}, 3000);*/
+                /*    }
+                    flag = false;
+                    console.log('make FLAG true', floorQueue)
+                }/*
                /*for(let i = 0; i < floorQueue.length; i++){
                     let temp_lift = { current_floor: floorQueue[0], direction: 'up'};
 

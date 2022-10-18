@@ -54,7 +54,7 @@ import {mapGetters} from 'vuex'
     }
     .floors {
         height: 100%;
-        width: calc( 100% - 120px;);
+        width: calc( 100% - 120px);
         display: flex;
         flex-direction: column;
     }

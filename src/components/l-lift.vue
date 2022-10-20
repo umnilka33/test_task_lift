@@ -14,6 +14,7 @@
         <div class="l-lift__floor-num">{{LIFT.current_floor}}
         </div>
       </div>
+      <div class="l-lift__timer"></div>
     </div>
 </template>
 
@@ -28,39 +29,43 @@ import {mapGetters} from 'vuex'
                 'LIFT',
                 'FLOOR_QUEUE'
             ]),
-        }, 
-        watch: {
-          'FLOOR_QUEUE': function () {
-            console.log('что то изменилось')
-          }
         }
     }
 </script>
 <style lang="scss">
     .l-lift {
       background-color: $bg-color-lift;
-      width: 100px; 
-      height: 100px;
+      width: $size-lift; 
+      height: $size-lift;
       position: relative;
       top: 400px;
+      border-radius: $border-radius-lift;
+      border: $border-lift;
 
       &__screen {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 80px;
+        width: 60px;
         height: 20px;
         margin: 10px;
         background-color: $bg-color-screen;
+        border-radius: $border-radius-lift;
       }
       .arrow-img {
-        width: 20px;
-        height: 20px;
+        width: $size-arrow;
+        height: $size-arrow;
       }
       &__floor-num {
-        font-size: $font-size-floor-number;
+        font-size: $font-size-lift-floor-number;
+      }
+      &__timer {
+        display: flex;
+        justify-content: center;
       }
     }
-
+    .screen-active {
+      background-color: $bg-color-screen-active;
+    }
     
 </style>

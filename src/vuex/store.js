@@ -1,7 +1,9 @@
 //import axios from 'axios';
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate';
 
-let store = new Vuex.Store( {
+const liftModule = {
+    namespaced: true,
     state: {
         floors: [
                 { floor_number: 5 },
@@ -12,6 +14,11 @@ let store = new Vuex.Store( {
             ],
         floor_queue: [],
         lift: { current_floor: 1, direction: 'up'}
+    }
+}
+let store = new Vuex.Store( {
+    modules: {
+        liftModule
     },
     mutations: {
         SET_FLOOR_TO_STATE: (state, floor_queue) => {
@@ -24,11 +31,9 @@ let store = new Vuex.Store( {
     actions: {
         SET_FLOOR_IN_QUEUE({commit}, floor_queue){
             commit('SET_FLOOR_TO_STATE', floor_queue);
-            //console.log('пришел номер', floor_number, commit)
         },
         SET_LIFT_DATA_CHANGES({commit}, lift_data){
             commit('SET_LIFT_DATA_TO_STATE', lift_data);
-            console.log('пришел лифт', lift_data, commit)
         }
     },
     getters: {
@@ -41,7 +46,8 @@ let store = new Vuex.Store( {
         LIFT(state){
             return state.lift;
         }
-    }
+    },
+    plugins: [createPersistedState()]
 })
 
 export default store;

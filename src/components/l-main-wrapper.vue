@@ -46,14 +46,18 @@ import {mapGetters} from 'vuex'
         justify-content: space-around;
         position: absolute;
         width: 100%;
-        bottom: 10px;
+        bottom: 0px;
     }
     .lift-shaft {
         background-color: $bg-color-shaft;
+        width: 100px;
         display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: $border-radius-shaft;
     }
     .floors {
-        height: 100%;
+        height: 500px;
         width: calc( 100% - 120px);
         display: flex;
         flex-direction: column;

@@ -23,7 +23,7 @@ export default {
   height: 100%;
 }
 body {
-  background-color: #363232;
+  background-color: #000000cb;
   height: 100%;
   margin: 0px;
 }

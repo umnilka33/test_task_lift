@@ -1,4 +1,4 @@
-![image](https://github.com/umnilka33/test_task_lift/src/assets/gif/lift1.gif)
+![image](https://github.com/umnilka33/test_task_lift/blob/main/src/assets/gif/lift1.gif)
 # test_task_lift
 
 ## Project setup

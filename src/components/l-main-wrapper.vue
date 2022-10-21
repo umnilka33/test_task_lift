@@ -45,8 +45,11 @@ import {mapGetters} from 'vuex'
         flex-direction: row;
         justify-content: space-around;
         position: absolute;
-        width: 100%;
-        bottom: 0px;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -250px;
     }
     .lift-shaft {
         background-color: $bg-color-shaft;

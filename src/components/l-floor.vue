@@ -39,8 +39,6 @@ let currentFloor, liftCurrentFloor = 0;
             ]),
             setCurrentFloorInQueue() {
                 floorQueue = this.$store.state.floor_queue;
-                console.log('stop', floorQueue)
-                alert('!')
                 currentFloor = this.floor_data.floor_number;
                 liftCurrentFloor = this.$store.state.lift.current_floor;
                 if(!(floorQueue.indexOf(currentFloor) != -1)||(floorQueue.length === 0)){
@@ -63,7 +61,6 @@ let currentFloor, liftCurrentFloor = 0;
                 function updateLift() {
                     deltaTime = new Date().getTime() - previousTime;
                     previousTime = new Date().getTime();
-                    //console.log('status = ', liftStatus)
                     requestAnimationFrame(updateLift);
                     var liftWithinFloor = false;
                     for (let i = 0; i < floors.length; i++) {
